@@ -8,32 +8,13 @@
     {%block span%} Dudas {%endblock%}
     {% block contenido %}
 
+{%block encabezado%}
 			<!--Encabezdo -->
-			<div class="page-header">
-				<div class="page-title">
-					<h3>Registro
-				    <small>Ingresa tu información</small></h3>
-				</div>
-
-			</div>
+					<h3>Contacto
+				    <small>Ingresa tus datos</small></h3>
 			<!-- /Encabezado-->
+{%endblock%}
 
-			{%block barra_navegacion %}
-			<!-- Barra de Navegcion-->
-				<div class="breadcrumb-line">
-					<ul class="breadcrumb">
-						<a href="{% url 'Principal' %}">
-
-							{% if request.path == '/' %}
-								Principal
-							{% else %}
-								Principal {{ request.path }}
-							{% endif %}
-						</a>	
-					</ul>
-				</div>
-			<!-- /Barra de Navegcion-->
-			{% endblock %}
 			<!-- Formulario -->
 			<form class="form-horizontal" action="#" role="form">
 	            <div class="panel panel-default">
@@ -49,12 +30,12 @@
 				        <div class="form-group">
 				            <label class="col-sm-2 control-label text-right">Mensaje:</label>
 				            <div class="col-sm-10">
-				            	<textarea class="form-control " name="Mensaje" id="Mensaje" ></textarea>
+				            	<textarea rows="6" class="form-control " name="Mensaje" id="Mensaje" ></textarea>
 				            </div>
 				        </div>
 				        
                         <div class="form-actions text-right">
-                        	<input type="submit" value="Enviar" class="btn btn-primary">
+                        	<input type="submit" value="Enviar" " class="btn btn-primary ">
                         </div>
 
 				    </div>

@@ -12,30 +12,12 @@
 
 {% block contenido %}
 
-<!--Encabezado -->
-<div class="page-header">
-    <div class="page-title">
-        <h3>Registro
-        <small>Ingresa tu información</small></h3>
-    </div>				
-</div>
-<!-- /Encabezado-->
-{%block barra_navegacion %}
-<!-- Barra de Navegcion-->
-	<div class="breadcrumb-line">
-		<ul class="breadcrumb">
-			<a href="{% url 'Principal' %}">
-
-				{% if request.path == '/' %}
-					Principal
-				{% else %}
-					Principal {{ request.path }}
-				{% endif %}
-			</a>	
-		</ul>
-	</div>
-<!-- /Barra de Navegcion-->
-{% endblock %}
+{%block encabezado%}
+			<!--Encabezdo -->
+					<h3>Registro
+				    <small>Ingresa tu información</small></h3>
+			<!-- /Encabezado-->
+{%endblock%}
 
 <!-- Formulario -->
 <form class="form-horizontal" action="#" role="form">

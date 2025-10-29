@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
 <title>{%block titulo%}{%endblock%}</title>
 
-{% load static %}
+{%load static%}
 <link href="{% static 'inicio/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'inicio/css/londinium-theme.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'inicio/css/styles.css'%}" rel="stylesheet" type="text/css">
-<link href="{% static 'inicio/css/icons.css'%}" rel="stylesheet" type="text/css">
+<link href="{%static 'inicio/css/icons.css'%}" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -58,8 +58,6 @@
 
 		<!-- Barra de menú -->
 		<div class="sidebar">
-
-            <!-- Image de Usuario-->
             <div class="user-menu dropdown">
                 <a href="#">
                     <img src="{%block imagen%}{%endblock%}">
@@ -68,34 +66,57 @@
                     </div>
                 </a>
             </div>
-            <!-- Image de Usuario-->
-
 			<div class="sidebar-content">
 				<!-- Menú de navegación -->
 				<ul class="navigation">
-							<li><a href="{%url 'Principal'%}">Principal</a></li>
-							<li><a href="{%url 'Formulario'%}">Formulario</a></li>
-							<li><a href="{%url 'Contacto'%}">Contacto</a></li>
+							<li><a href="{%url 'Principal'%}">Home</a></li>
+                            <li><a href="{%url 'Formulario'%}">Registrar</a></li>
+                            <li><a href="{%url 'Contacto'%}">Contactanos</a></li>
+                            
+
 				</ul>
 				<!-- /Fin menú -->
 			</div>
 		</div>
-		<!-- /sidebar -->		
-	</div>
+		<!-- /sidebar -->
 
-	<!-- Contenido Principal-->
-	 	<div class="page-content">
-			
-			<!--Contenido-->
-			{% block contenido %} <!--Template Tag-->
-			{%block barra_navegacion %}
-			{%endblock%}
-			<!--block sirve para indicar que colocaremos un bloque de contenido a traves de nuestra variable content-->
-			{% endblock %}
+<!-- Contenido Principal-->
+<div class="page-content">
 
-			
+    <!-- Encabezado -->
+    <div class="page-header">
+    <div class="page-title">
+        {% block encabezado %}
+        {% endblock %}
+    </div>
+</div>
+<!-- /Encabezado -->
 
-		</div>
-	<!-- /Contenido Principal-->
+
+<!--Barra de Navegacion--> 
+        <div class="breadcrumb-line"> 
+            <ul class="breadcrumb"> 
+                <a href="{%url 'Principal'%}"> 
+                    {%if request.path == '/'%} 
+                            Principal 
+                    {%else%} 
+                    Principal{{request.path}} 
+                    {%endif%} 
+                </a> 
+            </ul> 
+        </div> 
+        <!--Barra de Navegacion-->
+
+        <!--CONTENIDO-->
+    {% block contenido %} <!--Template Tag-->
+        <!--block sirve para indicar que colocaremos un bloque de contenido a traves de nuestra variable content-->
+    {%endblock %}
+
+        
+
+		
+</div>
+<!-- /Contenido Principal-->
+    
 </body>
-</html>	
+</html>

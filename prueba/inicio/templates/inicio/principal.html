@@ -12,32 +12,12 @@
     {% block contenido %} <!--Template Tag-->
 
 
+{%block encabezado%}
 			<!--Encabezdo -->
-			<div class="page-header">
-				<div class="page-title">
 					<h3>Alumnos
 				    <small>Lista de Alumnos </small></h3>
-				</div>
-
-			</div>
 			<!-- /Encabezado-->
-             {%block barra_navegacion %}
-            <!-- Barra de Navegcion-->
-                <div class="breadcrumb-line">
-                    <ul class="breadcrumb">
-                        <a href="{% url 'Principal' %}">
+{%endblock%}
 
-                            {% if request.path == '/' %}
-                                Principal
-                            {% else %}
-                                Principal {{ request.path }}
-                            {% endif %}
-                        </a>	
-                    </ul>
-                </div>
-            <!-- /Barra de Navegcion-->
-            {% endblock %}
-    
-    
 
     {% endblock %}
