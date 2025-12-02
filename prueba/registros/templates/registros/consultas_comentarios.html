@@ -21,24 +21,19 @@
          <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Foto</th>
-                    <th>Matricula</th>
-                    <th>Nombre</th>
-                    <th>Carrera</th>
-                    <th>Turno</th>
+                    <th>Usuario</th>
+                    <th>Mnesaje</th>
+                    <th>Editar/Borrar</th>
                 </tr>
             </thead>
 
             <tbody>
+                {% for comentario in comentarios %}
                 <tr>
-                    <td class="text-center">
-                        <img src="{% static 'inicio/images/user.png' %}" alt="Foto de Alumno" class="img-media">
-                    </td>
-                    <td class="text-center">UTM1234TIC</td>
-                    <td class="muted">Nathalia</td>
-                    <td class="muted">Tic</td>
-                    <td class="muted">Matutino</td>
+                    <td class="muted">{{comentario.usuario}}</td>
+                    <td class="muted">{{comentario.mensaje}}</td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
         <!--Tabla de Alumnos-->
