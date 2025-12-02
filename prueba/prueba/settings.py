@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'inicio',
     'registros.apps.RegistrosConfig',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -82,6 +84,16 @@ DATABASES = {
     }
 }
 
+'''DATABASES={
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ejemplo',
+        'USER': 'root',
+        'PASSWORD': 'yoruesgays23.',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}'''
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -123,3 +135,23 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# ARCHIVOS FOTOGRAFICOS 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+#CKEDITOR
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    }
+}
+
